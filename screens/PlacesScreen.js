@@ -1,8 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, FlatList } from 'react-native';
+
+import { usePlaces } from '../context/PlacesContext';
 
 export default function PlacesScreen() {
+  const [places] = usePlaces();
+
   return (
-    <Text>This should work ... hopefully</Text>
+    <FlatList data={places} renderItem={({item}) => (<Text>{item.title}</Text>)}/>
   );
 }

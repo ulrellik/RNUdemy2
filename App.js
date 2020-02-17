@@ -1,9 +1,12 @@
 import React from 'react';
 
-import AppNavigation from "./navigation/AppNavigation";
+import AppNavigation from './navigation/AppNavigation';
+import { PlacesProvider } from './context/PlacesContext';
 
 export default function App() {
   return (
-    <AppNavigation />
+    <PlacesProvider>
+      <AppNavigation />
+    </PlacesProvider>
   );
 }
